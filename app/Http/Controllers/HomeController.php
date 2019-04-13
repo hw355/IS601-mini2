@@ -47,7 +47,9 @@ class HomeController extends Controller
 */
         //$users = DB::table('users')->get();
 
-        dd($user->cars());
+        //dd($user->cars());
+
+        $users = $user->cars;
 
         //dd($users);
 

@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
 use Illuminate\Support\Facades\DB;
+use App\Car;
 
 class ExampleTest extends TestCase
 {
@@ -41,12 +42,19 @@ class ExampleTest extends TestCase
         $users = User::all();
         $this->assertEmpty($user);
     }
-*/
+
     public function testUserCount()
     {
         $cars = DB::table('cars')->get();
         $carCount = $cars->count();
         $this->assertTrue($carCount == 50);
+    }
+*/
+    public function testCarInsert()
+    {
+        $car = factory(Car::class)->create();
+
+        $this->assertNotEmpty($car);
     }
 
 }

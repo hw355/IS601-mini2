@@ -75,11 +75,17 @@ class ExampleTest extends TestCase
         $carCount = $cars->count();
         $this->assertTrue($carCount == 50);
     }
-*/
+
     public function testYearProperty()
     {
         $car = Car::find(1);
         $this->assertIsInt($car->year);
+    }
+*/
+    public function testMakeField()
+    {
+        $car = DB::table('cars')->pluck('make');
+        $this->assertTrue($car == 'honda' || 'toyota' || 'ford');
     }
 
 }

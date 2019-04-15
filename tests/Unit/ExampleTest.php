@@ -61,12 +61,19 @@ class ExampleTest extends TestCase
         $car->save();
         $this->assertTrue($car->year == '2000');
     }
-*/
+
     public function testCarDelete()
     {
         $car = Car::find(50);
         //$car->delete();
         $this->assertEmpty($car);
+    }
+*/
+    public function testCarCount()
+    {
+        $cars = DB::table('cars')->get();
+        $carCount = $cars->count();
+        $this->assertTrue($carCount == 50);
     }
 
 }

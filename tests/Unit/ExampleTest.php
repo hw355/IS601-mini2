@@ -23,7 +23,6 @@ class ExampleTest extends TestCase
     public function testUserInsert()
     {
         $user = factory(User::class)->create();
-
         $this->assertNotEmpty($user);
     }
 
@@ -49,12 +48,19 @@ class ExampleTest extends TestCase
         $carCount = $cars->count();
         $this->assertTrue($carCount == 50);
     }
-*/
+
     public function testCarInsert()
     {
         $car = factory(Car::class)->create();
-
         $this->assertNotEmpty($car);
+    }
+*/
+    public function testCarUpdate()
+    {
+        $car = Car::find(1);
+        $car->year = 2000;
+        $car->save();
+        $this->assertTrue($car->year == '2000');
     }
 
 }

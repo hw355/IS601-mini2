@@ -25,7 +25,7 @@ class ExampleTest extends TestCase
 
         $this->assertNotEmpty($user);
     }
-*/
+
     public function testUserUpdate()
     {
         $user = User::find(1);
@@ -33,6 +33,13 @@ class ExampleTest extends TestCase
         $user->save();
         $this->assertTrue($user->name == 'Steve Smith');
     }
-
+*/
+    public function testUserDelete()
+    {
+        $user = User::find(50);
+        //$user->delete();
+        $users = User::all();
+        $this->assertEmpty($user);
+    }
 
 }

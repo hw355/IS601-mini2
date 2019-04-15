@@ -38,7 +38,6 @@ class ExampleTest extends TestCase
     {
         $user = User::find(50);
         //$user->delete();
-        $users = User::all();
         $this->assertEmpty($user);
     }
 
@@ -54,13 +53,20 @@ class ExampleTest extends TestCase
         $car = factory(Car::class)->create();
         $this->assertNotEmpty($car);
     }
-*/
+
     public function testCarUpdate()
     {
         $car = Car::find(1);
         $car->year = 2000;
         $car->save();
         $this->assertTrue($car->year == '2000');
+    }
+*/
+    public function testCarDelete()
+    {
+        $car = Car::find(50);
+        //$car->delete();
+        $this->assertEmpty($car);
     }
 
 }

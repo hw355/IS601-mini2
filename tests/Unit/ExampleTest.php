@@ -4,6 +4,8 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\User;
+
 
 class ExampleTest extends TestCase
 {
@@ -16,4 +18,12 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    public function testUserInsert()
+    {
+        $user = factory(User::class)->create();
+
+        $this->assertNotEmpty($user);
+    }
+
 }
